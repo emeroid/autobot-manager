@@ -50,8 +50,7 @@ cp .env.example .env
 - Database credentials (DB_HOST, DB_PORT, DB_DATABASE, DB_USERNAME, DB_PASSWORD)
 - Redis credentials
 - Pusher or Laravel Echo Server settings (for real-time features)
-- API Base URLs (for external API integrations)
-  
+
 ```bash
 APP_NAME="Autobot Manager"
 APP_URL=http://localhost:8000
@@ -73,6 +72,10 @@ PUSHER_APP_ID=your_pusher_app_id
 PUSHER_APP_KEY=your_pusher_app_key
 PUSHER_APP_SECRET=your_pusher_app_secret
 PUSHER_APP_CLUSTER=mt1
+
+# External API Base URL : 
+BASE_API_URL=https://jsonplaceholder.typicode.com
+
 ```
 
 ### 5. Generate Application Key
@@ -104,8 +107,9 @@ In your project root folder run this bash script to start the project:
 You can manually create Autobots with the following Artisan command:
 
 ```bash
-php artisan autobots:create {autobots=500} {posts=10} {comments=10}
+php artisan autobots:create 500 10 10
 ```
+you can also run it without the parameters, if you intend to change the values you can then add params (autobot[500], post[10], comments[10] accordingly)
 
 ### 9 Developer API Documentation
 
